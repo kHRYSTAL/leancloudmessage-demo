@@ -43,10 +43,26 @@ dependencies {
     compile rootProject.ext.dependencies["appcompat-v7"]
     compile rootProject.ext.dependencies["recyclerview-v7"]
     compile rootProject.ext.dependencies["cardview-v7"]
-    compile 'cn.leancloud.android:avoscloud-sdk:v3.13.+'
+    compile rootProject.ext.dependencies["design"]
+    compile rootProject.ext.dependencies["leancloudsdk"]
     compile ('cn.leancloud.android:avoscloud-push:v3.13.+@aar'){transitive = true}
     compile rootProject.ext.dependencies["event-bus"]
     compile rootProject.ext.dependencies["pinyin"]
+
+    compile rootProject.ext.dependencies["klog"]
+
+    releaseCompile rootProject.ext.dependencies["leakcanary"]
+    debugCompile rootProject.ext.dependencies["leakcanary-noop"]
+    compile rootProject.ext.dependencies["rxandroid"]
+    compile rootProject.ext.dependencies["rxjava"]
+
+    compile rootProject.ext.dependencies["retrofit2"]
+    compile rootProject.ext.dependencies["retrofit2-gson"]
+    compile rootProject.ext.dependencies["retrofit2-adapter"]
+
+    compile rootProject.ext.dependencies["okHttp3"]
+    compile rootProject.ext.dependencies["okHttp3-glide"]
+    compile rootProject.ext.dependencies["glide"]
 
 
 

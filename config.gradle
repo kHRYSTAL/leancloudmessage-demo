@@ -45,7 +45,11 @@ ext {
                     "rxandroid"           : "io.reactivex:rxandroid:1.1.0",
                     "retrofit2"           : "com.squareup.retrofit2:retrofit:2.0.0-beta3",
                     "retrofit2-gson"      : "com.squareup.retrofit2:converter-gson:2.0.0-beta3",
-                    "adapter-rxjava"      : "com.squareup.retrofit2:adapter-rxjava:2.0.0-beta3",
+                    "retrofit2-adapter"      : "com.squareup.retrofit2:adapter-rxjava:2.0.0-beta3",
+
+                    "okHttp3"             : "com.squareup.okhttp3:okhttp:3.1.2",
+                    "okHttpUtil"          : "com.zhy:okhttputils:2.1.0",
+                    "okHttp3-glide"       : "com.github.bumptech.glide:okhttp3-integration:1.4.0@aar",
 
                     "event-bus"           : "de.greenrobot:eventbus:2.4.0",
                     "KProgressHUD"        : "com.kaopiz:kprogresshud:1.0.3",
@@ -62,7 +66,13 @@ ext {
                     "pinyin"              : "com.github.stuxuhai:jpinyin:1.0",
 //            leancloud
                     "leancloudsdk"        : "cn.leancloud.android:avoscloud-sdk:v3.13.+",
-                    "leancloudpush"       : "cn.leancloud.android:avoscloud-push:v3.13.+@aar"//{transitive = true}
+                    "leancloudpush"       : "cn.leancloud.android:avoscloud-push:v3.13.+@aar",//{transitive = true}
+
+
+                    "leakcanary"          : "com.squareup.leakcanary:leakcanary-android:1.3.1",
+                    "leakcanary-noop"     : "com.squareup.leakcanary:leakcanary-android-no-op:1.3.1",
+
+                    "klog"                : "com.github.zhaokaiqiang.klog:library:1.3.0",
 
 
 
