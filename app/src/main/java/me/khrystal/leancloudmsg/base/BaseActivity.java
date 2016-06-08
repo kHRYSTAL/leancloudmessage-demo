@@ -99,7 +99,7 @@ public abstract class BaseActivity <T extends BasePresenter> extends AppCompatAc
         Snackbar.make(getDecorView(),msg, Snackbar.LENGTH_SHORT).show();
     }
 
-    protected void showSnackBar(int id){
+    protected void showSnackbar(int id){
         Snackbar.make(getDecorView(),id,Snackbar.LENGTH_SHORT).show();
     }
 
@@ -138,4 +138,14 @@ public abstract class BaseActivity <T extends BasePresenter> extends AppCompatAc
     }
 
     public void onEvent(EmptyEvent event) {}
+
+    protected boolean filterException(Exception e) {
+        if (e != null) {
+            e.printStackTrace();
+            toast(e.getMessage());
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
