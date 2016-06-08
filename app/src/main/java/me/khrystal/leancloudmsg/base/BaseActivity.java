@@ -8,8 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import butterknife.ButterKnife;
+import de.greenrobot.event.EventBus;
 import me.khrystal.leancloudmsg.BuildConfig;
 import me.khrystal.leancloudmsg.annoation.ContentInject;
+import me.khrystal.leancloudmsg.event.EmptyEvent;
 import me.khrystal.leancloudmsg.utils.ViewUtil;
 
 /**
@@ -72,7 +74,14 @@ public abstract class BaseActivity <T extends BasePresenter> extends AppCompatAc
     @Override
     protected void onResume() {
         super.onResume();
+        EventBus.getDefault().register(this);
         if (mPresenter != null) mPresenter.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        EventBus.getDefault().unregister(this);
     }
 
     @Override
@@ -113,4 +122,20 @@ public abstract class BaseActivity <T extends BasePresenter> extends AppCompatAc
     public void hideProgress() {
 
     }
+
+
+    protected void startActivity(Class<?> cls) {
+        Intent intent = new Intent(this, cls);
+        startActivity(intent);
+    }
+
+    protected void startActivity(Class<?> cls, String... objs) {
+        Intent intent = new Intent(this, cls);
+        for (int i = 0; i < objs.length; i++) {
+            intent.putExtra(objs[i], objs[++i]);
+        }
+        startActivity(intent);
+    }
+
+    public void onEvent(EmptyEvent event) {}
 }
