@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 
-import me.khrystal.leancloudmsg.module.chat.module.LoginActivity;
+import me.khrystal.leancloudmsg.module.chat.view.LoginActivity;
 import me.khrystal.leancloudmsg.net.LeanCloudClientManager;
 import me.khrystal.leancloudmsg.utils.Constants;
 

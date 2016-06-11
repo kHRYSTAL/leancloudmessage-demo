@@ -14,15 +14,15 @@
             android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule"
             android:value="GlideModule"/>
 
-        <activity android:name=".module.chat.module.LaunchActivity" >
+        <activity android:name=".module.chat.view.LaunchActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".module.chat.module.LoginActivity"/>
-        <activity android:name=".module.chat.module.SquareActivity"/>
+        <activity android:name=".module.chat.view.LoginActivity"/>
+        <activity android:name=".module.chat.view.SquareActivity"/>
     </application>
 
 </manifest>

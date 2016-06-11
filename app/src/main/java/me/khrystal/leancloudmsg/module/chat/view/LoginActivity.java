@@ -1,4 +1,4 @@
-package me.khrystal.leancloudmsg.module.chat.module;
+package me.khrystal.leancloudmsg.module.chat.view;
 
 import android.content.Intent;
 import android.text.TextUtils;
@@ -17,7 +17,6 @@ import me.khrystal.leancloudmsg.R;
 import me.khrystal.leancloudmsg.annoation.ContentInject;
 import me.khrystal.leancloudmsg.base.BaseActivity;
 import me.khrystal.leancloudmsg.module.chat.presenter.ILaunchPresenter;
-import me.khrystal.leancloudmsg.module.chat.view.ILoginView;
 import me.khrystal.leancloudmsg.net.LeanCloudClientManager;
 import me.khrystal.leancloudmsg.utils.Constants;
 

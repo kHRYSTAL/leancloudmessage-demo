@@ -7,7 +7,7 @@
     <include layout="@layout/tool_bar"/>
     <fragment
         android:id="@+id/fragment_chat"
-        android:name="me.khrystal.leancloudmsg.module.chat.module.ChatFragment"
+        android:name="me.khrystal.leancloudmsg.module.chat.view.ChatFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </LinearLayout>

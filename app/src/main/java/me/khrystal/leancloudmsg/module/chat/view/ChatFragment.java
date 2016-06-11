@@ -1,4 +1,4 @@
-package me.khrystal.leancloudmsg.module.chat.module;
+package me.khrystal.leancloudmsg.module.chat.view;
 
 import android.view.View;
 
