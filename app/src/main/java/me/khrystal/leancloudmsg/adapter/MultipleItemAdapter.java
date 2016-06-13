@@ -93,4 +93,12 @@ public class MultipleItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         long curTime = messageList.get(position).getTimestamp();
         return curTime - lastTime > TIME_INTERVAL;
     }
+
+    public AVIMMessage getFirstMessage() {
+        if (null != messageList && messageList.size() > 0) {
+            return messageList.get(0);
+        } else {
+            return null;
+        }
+    }
 }

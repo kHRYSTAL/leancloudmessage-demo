@@ -11,8 +11,10 @@ import android.view.ViewGroup;
 import com.squareup.leakcanary.RefWatcher;
 
 import butterknife.ButterKnife;
+import de.greenrobot.event.EventBus;
 import me.khrystal.leancloudmsg.annoation.ContentInject;
 import me.khrystal.leancloudmsg.app.App;
+import me.khrystal.leancloudmsg.event.EmptyEvent;
 
 /**
  * usage: Activity基类
@@ -62,9 +64,16 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment
     @Override
     public void onResume() {
         super.onResume();
+        EventBus.getDefault().register(this);
         if (mPresenter!=null){
             mPresenter.onResume();
         }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        EventBus.getDefault().unregister(this);
     }
 
     @Override
@@ -117,5 +126,17 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment
     @Override
     public void onClick(View v) {
 
+    }
+
+    public void onEvent(EmptyEvent event) {}
+
+    protected boolean filterException(Exception e) {
+        if (e != null) {
+            e.printStackTrace();
+            toast(e.getMessage());
+            return false;
+        } else {
+            return true;
+        }
     }
 }

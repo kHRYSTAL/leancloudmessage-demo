@@ -11,6 +11,7 @@ import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
 import me.khrystal.leancloudmsg.BuildConfig;
+import me.khrystal.leancloudmsg.handler.MessageHandler;
 
 /**
  * usage: Application
@@ -44,7 +45,7 @@ public class App extends Application{
 
         // 必须在启动的时候注册 MessageHandler
         // 应用一启动就会重连，服务器会推送离线消息过来，需要 MessageHandler 来处理
-        //AVIMMessageManager.registerMessageHandler(AVIMTypedMessage.class, new MessageHandler(this));
+        AVIMMessageManager.registerMessageHandler(AVIMTypedMessage.class, new MessageHandler(this));
     }
 
 

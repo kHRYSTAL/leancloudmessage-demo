@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="me.khrystal.leancloudmsg" >
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
     <application
         android:name=".app.App"
         android:allowBackup="true"
@@ -22,7 +28,24 @@
             </intent-filter>
         </activity>
         <activity android:name=".module.chat.view.LoginActivity"/>
-        <activity android:name=".module.chat.view.SquareActivity"/>
+        <activity android:name=".module.chat.view.SquareActivity"
+                  android:windowSoftInputMode="adjustResize|stateAlwaysHidden"/>
+        <activity
+            android:name=".module.chat.view.SingleChatActivity"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"/>
+
+        <!--leancloud-->
+        <service android:name="com.avos.avoscloud.PushService"/>
+
+        <receiver android:name=".broadcastreceiver.NotificationBroadcastReceiver"/>
+
+        <receiver android:name="com.avos.avoscloud.AVBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
